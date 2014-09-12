@@ -18,8 +18,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
 import  sun.audio.*;
-//Testing more
-//Game class_
+//Eclipse Luna is the way to go :)
 public class Game implements KeyListener {
    
 

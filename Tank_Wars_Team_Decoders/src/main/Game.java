@@ -1235,7 +1235,7 @@ Mode 3 is Weapon Selection
                   
 
 
-                   //MOVEMENT
+                   //MOVEMENT (Move Tanks)
                    if ((keyCode == KeyEvent.VK_A) && (curfuel > 0)) //This will move the tank if the left key is pressed and fuel isn't empty.
                    {  
                 	   Mode1 = 0;
@@ -1428,7 +1428,7 @@ Mode 3 is Weapon Selection
                   {
                 	  Mode2 = 0;
                         //if(Tank2.getMovesLeft()>0) {
-                            if (Tank2.getTankSprite().getX()<= 796 ) {
+                            if (Tank2.getTankSprite().getX() < 770 ) {
                                     moving=true;
                                     Tank2.setMovesLeft(Tank2.getMovesLeft()-3);
                                     Tank2.getTankSprite().setX(Tank2.getTankSprite().getX()+3);

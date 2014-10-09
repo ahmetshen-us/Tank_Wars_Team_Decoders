@@ -1,36 +1,25 @@
 package main;
-
-
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.DisplayMode;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Window;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.geom.AffineTransform;
-import java.awt.image.BufferedImage;
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.InputStream;
+import java.awt.*;
 
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
-import sun.audio.AudioPlayer;
-import sun.audio.AudioStream;
-import ScreenManagement.Animation;
-import ScreenManagement.ScreenManager;
-import ScreenManagement.Sprite;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
+import ScreenManagement.*;
+
+import java.io.*;
+import java.awt.geom.AffineTransform;
+import java.awt.image.BufferedImage;
+
+import  sun.audio.*;
+//Push me to GitHub using EGit
+//Game class_
 public class Game implements KeyListener {
    
 
@@ -160,7 +149,7 @@ public class Game implements KeyListener {
     
     
 
-    Weapon T1Weapon = new Weapon(this, Tank1);
+    Weapon T1Weapon = new Weapon(this, Tank1);                                      
     Weapon T2Weapon = new Weapon(this, Tank2);
     //*******************
     ////Necessary Global Variables////
@@ -1117,8 +1106,8 @@ Mode 3 is Weapon Selection
            }
               //JumpUp resets the turrets look
            jumpUp = true;
-           Tank1.setHealth(100);
-           Tank2.setHealth(100);
+           Tank1.setHealth(40);
+           Tank2.setHealth(40);
            Tank1.setWeapon2(0); //Set weapon to original
            Tank2.setWeapon2(0);	//Set weapon to original
            turn = 1;
@@ -1247,7 +1236,7 @@ Mode 3 is Weapon Selection
                   
 
 
-                   //MOVEMENT (Move Tanks)
+                   //MOVEMENT
                    if ((keyCode == KeyEvent.VK_A) && (curfuel > 0)) //This will move the tank if the left key is pressed and fuel isn't empty.
                    {  
                 	   Mode1 = 0;
@@ -1440,9 +1429,7 @@ Mode 3 is Weapon Selection
                   {
                 	  Mode2 = 0;
                         //if(Tank2.getMovesLeft()>0) {
-              
-                	  //=========================================================== Alex
-                            if (Tank2.getTankSprite().getX() < 770 ) {
+                            if (Tank2.getTankSprite().getX()<= 796 ) {
                                     moving=true;
                                     Tank2.setMovesLeft(Tank2.getMovesLeft()-3);
                                     Tank2.getTankSprite().setX(Tank2.getTankSprite().getX()+3);
@@ -1675,7 +1662,7 @@ Mode 3 is Weapon Selection
         int healthBar1X = 35;
         int healthBar1Y = 29;
         
-        int healthBar1Value = (int) (110 - (Tank1.getHealth()*1.1)); // Used to determine how much of the health bar is covered
+        int healthBar1Value = (int) (44 - (Tank1.getHealth()*4.4)); // Used to determine how much of the health bar is covered
         int healthBar1Display = (int) (Tank1.getHealth()); // Used to display the value of a player 1's health
         
         g.drawImage(healthIcon, 5, 28, null); // health icon
@@ -1684,10 +1671,10 @@ Mode 3 is Weapon Selection
         g.setColor(Color.darkGray); // Makes the rectangle that covers health dark gray
         
         // Draws rectangle that covers Player 1 Health Bar when P1 loses health
-        g.drawRect(healthBar.getWidth(null)+(healthBar1X-1)-healthBar1Value,
-                healthBar1Y+1, healthBar1Value - 1, 20);
-        g.fillRect(healthBar.getWidth(null)+(healthBar1X-1)-healthBar1Value,
-                healthBar1Y+1, healthBar1Value - 1, 20);
+        g.drawRect(healthBar.getWidth(null)+(healthBar1X-4)-healthBar1Value,
+                healthBar1Y+1, healthBar1Value - 4, 20);
+        g.fillRect(healthBar.getWidth(null)+(healthBar1X-4)-healthBar1Value,
+                healthBar1Y+1, healthBar1Value - 4, 20);
         g.setColor(Color.white); // Makes displayed health number white
         g.drawString(Integer.toString(healthBar1Display), (healthBar1X + 5), (healthBar1Y + 20)); // Displays the number value of player 1's health
         
@@ -1756,7 +1743,7 @@ Mode 3 is Weapon Selection
         int healthBar2X = 682;
         int healthBar2Y = 29;
         
-        int healthBar2Value = (int) (110 - (Tank2.getHealth()*1.1)); //Used to determine how much of player 2's health bar is covered
+        int healthBar2Value = (int) (44 - (Tank2.getHealth()*4.4)); //Used to determine how much of player 2's health bar is covered
         int healthBar2Display = (int) (Tank2.getHealth());  // Used to display the number value of player 2's health
         
         g.drawImage(healthIcon, 652, 28, null); // health icon

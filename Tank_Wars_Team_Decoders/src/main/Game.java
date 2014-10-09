@@ -1,24 +1,36 @@
 package main;
-import java.awt.*;
+
+
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.DisplayMode;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Window;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.geom.AffineTransform;
+import java.awt.image.BufferedImage;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.InputStream;
 
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+import ScreenManagement.Animation;
+import ScreenManagement.ScreenManager;
+import ScreenManagement.Sprite;
 
-import ScreenManagement.*;
-
-import java.io.*;
-import java.awt.geom.AffineTransform;
-import java.awt.image.BufferedImage;
-
-import  sun.audio.*;
-//Eclipse Luna is the way to go :)
 public class Game implements KeyListener {
    
 
@@ -1428,6 +1440,8 @@ Mode 3 is Weapon Selection
                   {
                 	  Mode2 = 0;
                         //if(Tank2.getMovesLeft()>0) {
+              
+                	  //=========================================================== Alex
                             if (Tank2.getTankSprite().getX() < 770 ) {
                                     moving=true;
                                     Tank2.setMovesLeft(Tank2.getMovesLeft()-3);

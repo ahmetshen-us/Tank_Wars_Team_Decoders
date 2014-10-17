@@ -1,4 +1,4 @@
-package main;
+	package main;
 
 
 import java.awt.BasicStroke;
@@ -99,6 +99,7 @@ public class Game implements KeyListener {
     protected Image keyarrowup = loadImage("images/keyarrowup.png");
     protected Image keyarrowdown = loadImage("images/keyarrowdown.png");
     protected Image keyspacebar = loadImage("images/keyspacebar.png");
+    
     // Player 1 tutorial controls
     protected Image W = loadImage("images/keys/W.png");
     protected Image A = loadImage("images/keys/A.png");
@@ -108,6 +109,7 @@ public class Game implements KeyListener {
     protected Image E = loadImage("images/keys/E.png");
     protected Image F = loadImage("images/keys/F.png");
     protected Image R = loadImage("images/keys/R.png");
+    
     // Player 2 tutorial controls
     protected Image up = loadImage("images/keys/UP.png");
     protected Image left = loadImage("images/keys/LEFT.png");
@@ -158,11 +160,11 @@ public class Game implements KeyListener {
     protected Sprite cloudDark3; //cloud dark
     protected Sprite rainSprite;
     
-    
-
+    //Weapons
     Weapon T1Weapon = new Weapon(this, Tank1);
     Weapon T2Weapon = new Weapon(this, Tank2);
-    //*******************
+    
+
     ////Necessary Global Variables////
     public int restartgame = 0; //added by Ryan Kleckner 4/8/08
     public boolean firstfall = true;//sees if the tank is falling for the first time
@@ -172,6 +174,7 @@ public class Game implements KeyListener {
     public boolean tutorialmode = false;
     public boolean muted = false;
     
+    //Music
     public static String gameMusic = "ffxiii.wav";
     public static String titleMusic = "ffxiii.wav";
     public static String helpMusic = "ffxiii.wav";
@@ -181,33 +184,42 @@ public class Game implements KeyListener {
     //0=dynamic
     //1=turn based
     //3=restart game
+    
     public boolean GameSTATEchanged = true; // has GameSTATE been changed since starting the game
     // (needed in order to change GameSTATE during the game)
+    
     public int turn=1;
     //TEST
     //if turn =1 player 1 turn
     //if turn =2 player 2 turn
+    
     public int hitTest=0; 
     //hittest=2 hit ground or tank
     //hittest=0 when shot is reset
     //hittest=2 hit ground or tank
     //hittest=0 when shot is reset
+    
     public int tankshoot=0; //only time it equals zero
     //tankshoot=1 means shot was just fired
     //tankshoot>1 means nothing besides that a shot was not just fired. need to fix this
+    
     public int tankshoot2=0; //only time it equals zero
     //tankshoot=1 means shot was just fired
     //tankshoot>1 means nothing besides that a shot was not just fired. need to fix this
+    
     public float Gravf; //Gravity in the game
     //////////// rename these variables...
+    
     public static int start=0;
     public boolean TankCreated = false; //Gate to detect if a tank was randomly placed onto the map or not
+    
     /***Holder and Counters***/
     int a=0;
     public int windcount=0;//determines if the wind needs to be changed
     public float Windf = .00f;
     public int WindVar=0;
-    //////////////////////
+    
+   
     ///Dynamic Ground variables////
     public int basex=0;
     public int basey=900;
@@ -969,6 +981,7 @@ public class Game implements KeyListener {
             }
         }                
     }*/
+    
 /*    
     private void CreateHole(Sprite shot)
     {
@@ -999,14 +1012,15 @@ public class Game implements KeyListener {
             
     }
  */   
-    //If true can change terrain
-    //Switches to false when first shot is fired
+    	//If true can change terrain
+    	//Switches to false when first shot is fired
+    
     boolean terrainChange = true;
     
     //KEY COMMANDS
 
     
-/*   	ModeIndex
+/*   ModeIndex
 Mode 0 is movement
 Mode 1 is Turret angle
 Mode 2 is Power
@@ -1345,13 +1359,13 @@ Mode 3 is Weapon Selection
                       { 
                     	Mode2 = 3;
                     	//removed, no new weapons made yet with the new weapon class
-                    	// weaponindex2=weaponindex2+3;
-                      // Tank2.setWeapon2(weapons2[weaponindex2%4]);
+                    	weaponindex2=weaponindex2+3;
+                      Tank2.setWeapon2(weapons2[weaponindex2%4]);
                       }
-                 // if (keyCode == KeyEvent.VK_PERIOD) { // Nuclear Weapon
-                	//  weaponindex2=weaponindex2+1;
-                      //Tank2.setWeapon2(weapons2[weaponindex2%4]);
-                 // }
+                 if (keyCode == KeyEvent.VK_PERIOD) { // Nuclear Weapon
+                	  weaponindex2=weaponindex2+1;
+                      Tank2.setWeapon2(weapons2[weaponindex2%4]);
+                  }
                 
                   
                 //Power

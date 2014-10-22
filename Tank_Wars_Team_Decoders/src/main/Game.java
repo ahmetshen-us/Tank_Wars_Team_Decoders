@@ -1226,9 +1226,8 @@ Mode 3 is Weapon Selection
                   if (keyCode == KeyEvent.VK_R) // Normal
                   { 
                 	  Mode1 = 3;
-                	  //removed, no new weapons made yet with the new weapon class
-                    	//weaponindex1=weaponindex1+1;
-                        //  Tank1.setWeapon2(weapons1[weaponindex1%4]);
+                    	weaponindex1=weaponindex1+1;
+                        Tank1.setWeapon2(weapons1[weaponindex1%4]);
                     }
                   
                     

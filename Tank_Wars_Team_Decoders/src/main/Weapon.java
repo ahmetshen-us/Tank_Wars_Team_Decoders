@@ -186,7 +186,7 @@ public class Weapon
         {   
             if(TG.topy[Math.round(TS.getX())] < Math.round(TS.getY()))//above the top of the terrain
             {
-                CreateHole(TS);
+               CreateHole(TS);
             }
         }                
     }//end fireShot() Method
@@ -245,7 +245,7 @@ public class Weapon
                 holderSin = (int)(Math.floor((Math.sin(groundHolder/57.3))*5));//uses a length of 10 for hole
                 if (counter3>3)
                 {
-                    TG.topy[counter3] = TG.topy[counter3]- holderSin;//reduces terrain
+                   if(TG.Tank1.getWeapon2() == 0) TG.topy[counter3] = TG.topy[counter3]- holderSin;//reduces terrain
                 }//depth of square //
 
                 //creates an unequal cirlce  <--- lol this guy cant spell                   
@@ -257,6 +257,7 @@ public class Weapon
 
                 holderCos++;
                 groundHolder++; 
+ 
             }//end while loop           
     }//end CreateHole method
     

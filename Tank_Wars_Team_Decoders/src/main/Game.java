@@ -1131,8 +1131,8 @@ Mode 3 is Weapon Selection
            }
               //JumpUp resets the turrets look
            jumpUp = true;
-           Tank1.setHealth(100);
-           Tank2.setHealth(100);
+           Tank1.setHealth(40);
+           Tank2.setHealth(40);
            Tank1.setWeapon2(0); //Set weapon to original
            Tank2.setWeapon2(0);	//Set weapon to original
            turn = 1;

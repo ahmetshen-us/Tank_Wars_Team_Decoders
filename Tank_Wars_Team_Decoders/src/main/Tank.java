@@ -12,7 +12,7 @@ public class Tank {
 
 	private Sprite tankSprite;
 
-	private int health = 100;
+	private int health = 10;
 
 	private Sprite tankImage;
 

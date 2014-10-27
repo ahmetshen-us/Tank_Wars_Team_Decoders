@@ -1142,6 +1142,10 @@ Mode 3 is Weapon Selection
            Tank1.setShotPower(-.3f);
            Tank2.setShotPower(-.3f);
            
+           //Resets the turret position to the center--Garry
+           Tank1.setAngle(90);
+           Tank2.setAngle(90);
+           
            //Reset ammo for each weapon back to full after restarting game
            Tank1.setSecondWeaponAmmo(2);
            Tank2.setSecondWeaponAmmo(2);

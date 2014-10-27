@@ -91,6 +91,7 @@ public class DataClass
 								}
 								s = in.readLine(); 
 							}
+						in.close();
 				}
 			catch (IOException iE)
 			{System.out.println("ReadLine Error");}
